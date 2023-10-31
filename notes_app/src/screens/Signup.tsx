@@ -52,7 +52,7 @@ const Signup = ({ navigation }: MyProps) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     const body = { name: name, email: email, password: password };
-    const res = await fetch('http://192.168.148.244:8000/api/auth/register', {
+    const res = await fetch('http://localhost:8000/api/auth/register', {
       headers: headers,
       method: 'POST',
       body: JSON.stringify(body),

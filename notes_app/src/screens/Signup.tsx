@@ -9,6 +9,8 @@ import React, { useState } from 'react';
 import { RootNavigationProps } from '../../App';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Loader from '../components/Loader';
+import { API_URL } from '@env';
+
 interface MyProps {
   navigation: StackNavigationProp<RootNavigationProps, 'Signup'>;
 }
@@ -52,7 +54,7 @@ const Signup = ({ navigation }: MyProps) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     const body = { name: name, email: email, password: password };
-    const res = await fetch('http://localhost:8000/api/auth/register', {
+    const res = await fetch(`http://${API_URL}/api/auth/register`, {
       headers: headers,
       method: 'POST',
       body: JSON.stringify(body),

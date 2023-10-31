@@ -8,6 +8,8 @@ import {
 import React, { useState } from 'react';
 import { RootNavigationProps } from '../../App';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { API_URL } from '@env';
+
 import Loader from '../components/Loader';
 interface MyProps {
   navigation: StackNavigationProp<RootNavigationProps, 'Login'>;
@@ -41,7 +43,7 @@ const Login = ({ navigation }: MyProps) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     const body = { email: email, password: password };
-    const res = await fetch('http://localhost:8000/api/auth/login', {
+    const res = await fetch(`http://${API_URL}/api/auth/login`, {
       headers: headers,
       method: 'POST',
       body: JSON.stringify(body),

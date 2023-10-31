@@ -30,7 +30,6 @@ router.post('/register', async (req, res) => {
       password: req.body.password,
     });
     const data = await user.save();
-    console.log(data);
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json(error);

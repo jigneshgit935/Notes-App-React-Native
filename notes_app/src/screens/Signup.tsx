@@ -61,8 +61,6 @@ const Signup = ({ navigation }: MyProps) => {
     });
     const data = await res.json();
     setLoading(false);
-
-    console.log(data);
     navigation.navigate('Login');
   };
   return (

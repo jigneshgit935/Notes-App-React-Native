@@ -50,8 +50,6 @@ const Login = ({ navigation }: MyProps) => {
     });
     const data = await res.json();
     setLoading(false);
-
-    console.log(data);
     navigation.navigate('Home', { id: data._id });
   };
   return (
